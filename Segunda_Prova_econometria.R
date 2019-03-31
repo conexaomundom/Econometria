@@ -89,8 +89,27 @@ summary(modelo_linear0.1)
 # do Paladar é explicado por H2S e Ácido Lático.
 
 
+# d) #########################################################################
+# egressão múltipla do paladar contra o ácido acético, H2S e ácido lático.
 
+modelo_full <- lm(Paladar ~ H2_S + Acido_Latico + Acido_Acetico)
+summary(modelo_full)
+modelo_full1 <- lm(Paladar ~ H2_S + Acido_Latico)
+summary(modelo_full1)
+# Realizando o modelo com todas as variáveis a variável Ácido Acetico demonstra
+# não ser significativa para o modelo voltando ser o modelo_linear0.1. com o R2 
+# não foi satisfatorio demonstrando que cerca de 62.59% da variabilidade do 
+# Paladar é explicado por H2S e Ácido Lático.
 
+# e) ########################################################################
 
+# Dados os seus conhecimentos sobre multicolinearidade, como decidiria 
+# entre essas regressões?
 
+# Com meus conhecimentos de multicolinaeridade chama minha atenção (Após feita a seleção
+# de variáveis) o modelo_linear01, porque as variáveis explicativas tem uma correlação
+# considerável de 0.6448123 e no gráfico de dispersão também foi perceptível e esse modelo 
+# teve um poder explicativo de 
 
+# f) ########################################################################
+# Que conclusões gerais você pode tirar de sua análise?
