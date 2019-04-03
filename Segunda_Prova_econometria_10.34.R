@@ -2,7 +2,7 @@
 
 install.packages("ggplot2")
 library(ggplot2)
-# banco é a tabela da 10.17 do livro Gujarati e Porter.
+# banco é a tabela da 10.18 do livro Gujarati e Porter.
 attach(banco)
 
 # a) Diagramas de dispersao
@@ -116,4 +116,9 @@ summary(modelo_full1)
 # f) ########################################################################
 # Que conclusões gerais você pode tirar de sua análise?
 # À medida que o queijo envelhece, vários processos químicos ocorrem, determinando o sabor
-# do produto final. FAZER OUTRAS REGRESSÕES. 
+# do produto final. 
+
+# FAZER OUTRAS REGRESSÕES. 
+
+# Se o livro disse que essas quantidades químicas que determinam o sabor do queijo
+# não faz sentido o modelo final ficar com apenas uma variavel explicativa...
