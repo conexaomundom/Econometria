@@ -80,6 +80,7 @@ N2 <- length(res) - N1
 # > res
 # [1] 0 0 0 0 1 1 1 0 1 1 1 1 0 0 0 0 0 0 0 1 1 1 0 1 1 0 0 0 1 1
 # Observando res tem 10 carreiras
+R <- 10
 N <- length(res)
 
 # Como sob H0 de que os resultados sucessivos são independentes e supondo
