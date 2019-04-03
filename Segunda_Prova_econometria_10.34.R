@@ -1,13 +1,11 @@
-######33
-#######
-#########
+
 
 install.packages("ggplot2")
 library(ggplot2)
-banco
+# banco é a tabela da 10.17 do livro Gujarati e Porter.
 attach(banco)
 
-#a) Diagramas de dispersao
+# a) Diagramas de dispersao
 
 graf_disp <- ggplot(banco, aes(x=Paladar, y=Acido_Acetico)) + geom_point(aes(y = Acido_Acetico), col =2) +
   geom_point(aes(y=Acido_Latico, col =3))+geom_point(aes(y=H2_S, col = 4)) + # geom_smooth(method="loess", se = F) +
@@ -18,7 +16,7 @@ plot(graf_disp)
 
 plot(banco[,-1], main = "Diagrama de dispersão de todas as variéveisdo banco: Ácido Acético, H2S e Ácido Latico.")
 
-#b) Regressão bivariada do paladar contra o ácido acético e H2S e interprete os resultados obtidos.
+# b) Regressão bivariada do paladar contra o ácido acético e H2S e interprete os resultados obtidos.
 
 plot(Paladar ~ H2_S, xlab = "Paladar", ylab ="H2S", main = "Diagrama de dispersão entre Paladar e H2S") 
 plot(Paladar ~ Acido_Acetico,xlab = "Paladar", ylab ="Ácido Acético", main = "Diagrama de dispersão entre Paladar e Ácido Acético")
@@ -108,8 +106,14 @@ summary(modelo_full1)
 
 # Com meus conhecimentos de multicolinaeridade chama minha atenção (Após feita a seleção
 # de variáveis) o modelo_linear01, porque as variáveis explicativas tem uma correlação
-# considerável de 0.6448123 e no gráfico de dispersão também foi perceptível e esse modelo 
-# teve um poder explicativo de 
+# considerável de 0.6448123 e no gráfico de dispersão também foi perceptível uma relação
+# entre H2S e Ácido Lático e esse modelo teve um poder explicativo de 62.59% não muito
+# satisfatório, mas o primeiro modelo rodado modelo_linear3 que consiste em Paladar sendo
+# explicado por H2S e sem intercepto que teve a mior correlação entre as variáveis explicativas
+# foi H2S e a variável dependente de interesse Paladar de 0.7557523 sendo o modelo que eu escolheria
+# por ter o maior poder explicativo de 85.99%.
 
 # f) ########################################################################
 # Que conclusões gerais você pode tirar de sua análise?
+# À medida que o queijo envelhece, vários processos químicos ocorrem, determinando o sabor
+# do produto final. FAZER OUTRAS REGRESSÕES. 
