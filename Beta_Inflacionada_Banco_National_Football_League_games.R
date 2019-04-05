@@ -11,4 +11,16 @@ library(gamlss.dist)
 
 # Porem como tem variáveis faltando, que foram preenchidas com NA
 # vamos fazer imputação de dados utilizando as médias móveis
-# sendo preenchidos pela média dos dois 
+# sendo preenchidos pela média dos dois valores anteriores e seguintes
+# já que as variáveis são "weather_temperature", "weather_wind_mph" e 
+# "weather_humidity" que são a temperatua, o vento em mph  e a umidade.
+
+attach(National_Football_League_games)
+names(National_Football_League_games)
+
+# Arredondando porque ao colocar a média ficaram número quebrados.
+weather_temperature <- round(weather_temperature)
+weather_wind_mph <- round(weather_wind_mph)
+weather_humidity <- round(weather_humidity)
+
+
