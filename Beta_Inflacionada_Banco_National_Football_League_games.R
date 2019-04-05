@@ -29,3 +29,19 @@ score_away <- score_away/100
 
 
 
+# Vamos rodar um modelo de regressão da beta inflacionada explicando o score home:
+
+summary(ajusterbezi1<-gamlss(score_home ~  (team_home + score_away + team_away + stadium + stadium_neutral + weather_temperature + weather_wind_mph + weather_humidity),
+                             nu.formula=~(team_home + score_away + team_away + stadium + stadium_neutral + weather_temperature + weather_wind_mph + weather_humidity),
+                             sigma.formula=~(team_home + score_away + team_away + stadium + stadium_neutral + weather_temperature + weather_wind_mph + weather_humidity),family=BEZI))
+
+
+ajusterbeoi2<-stepGAIC(ajusterbezi1,what="mu")
+
+ajusterbeoi3<-stepGAIC(ajusterbeoi2,what="nu")
+
+ajusterbeoi4<-stepGAIC(ajusterbeoi3,what="sigma")
+
+# vamos rodar um modelo de regressão da beta inflacionada explicando o score away:
+
+
