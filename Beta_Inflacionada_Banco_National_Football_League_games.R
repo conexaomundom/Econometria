@@ -23,4 +23,9 @@ weather_temperature <- round(weather_temperature)
 weather_wind_mph <- round(weather_wind_mph)
 weather_humidity <- round(weather_humidity)
 
+# Modificando os escores para ficar entre 0 e 1
+score_home <- score_home/100
+score_away <- score_away/100
+
+
 
